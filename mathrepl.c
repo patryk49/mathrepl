@@ -329,7 +329,7 @@ int main(){
 		Value res = evaluate_line(&symbols, line);
 		switch (res.type){
 		case DT_Error:
-			for (size_t i=0; i!=res.size; i+=1) putchar(' ');
+			for (size_t i=0; i!=res.size; i+=1) putchar(buffer[i]=='\t' ? '\t' : ' ');
 			printf("^\nERROR: %s\n", res.error);
 			break;
 		case DT_Real:
